@@ -93,7 +93,7 @@
   },
   {
     "id": "api.admin.test_email.body",
-    "translation": "<br/><br/><br/>看来你的Mattermost邮箱设置成功！"
+    "translation": "<br/><br/><br/>看来你的BC Chat邮箱设置成功！"
   },
   {
     "id": "api.admin.test_email.missing_server",
@@ -105,7 +105,7 @@
   },
   {
     "id": "api.admin.test_email.subject",
-    "translation": "Mattermost - 测试邮箱设置"
+    "translation": "BC Chat - 测试邮箱设置"
   },
   {
     "id": "api.admin.test_s3.missing_s3_bucket",
@@ -469,7 +469,7 @@
   },
   {
     "id": "api.command.invite_people.desc",
-    "translation": "发送一封邀请邮件给你的Mattermost团队"
+    "translation": "发送一封邀请邮件给你的BC Chat团队"
   },
   {
     "id": "api.command.invite_people.email_off",
@@ -776,7 +776,7 @@
   },
   {
     "id": "api.command_help.desc",
-    "translation": "打开 Mattermost 帮助页面"
+    "translation": "打开 BC Chat 帮助页面"
   },
   {
     "id": "api.command_help.name",
@@ -888,7 +888,7 @@
   },
   {
     "id": "api.command_logout.desc",
-    "translation": "注销Mattermost"
+    "translation": "注销BC Chat"
   },
   {
     "id": "api.command_logout.fail_message",
@@ -2168,7 +2168,7 @@
   },
   {
     "id": "api.slackimport.slack_add_posts.user_no_exists.debug",
-    "translation": "Slack 导入：无法添加消息因为 Slack 用户 %v 不存在于 Mattermost。"
+    "translation": "Slack 导入：无法添加消息因为 Slack 用户 %v 不存在于 BC Chat。"
   },
   {
     "id": "api.slackimport.slack_add_posts.without_user.debug",
@@ -2184,11 +2184,11 @@
   },
   {
     "id": "api.slackimport.slack_add_users.merge_existing",
-    "translation": "Slack 用户已和拥有邮箱地址 {{.Email}} 和用户名 {{.Username}} 的 Mattermost 用户合并。\r\n"
+    "translation": "Slack 用户已和拥有邮箱地址 {{.Email}} 和用户名 {{.Username}} 的 BC Chat 用户合并。\r\n"
   },
   {
     "id": "api.slackimport.slack_add_users.merge_existing_failed",
-    "translation": "Slack 用户已和现有邮箱地址 {{.Email}} 和用户名 {{.Username}} 的 Mattermost 用户合并，但没法添加用户到他们的团队。\r\n"
+    "translation": "Slack 用户已和现有邮箱地址 {{.Email}} 和用户名 {{.Username}} 的 BC Chat 用户合并，但没法添加用户到他们的团队。\r\n"
   },
   {
     "id": "api.slackimport.slack_add_users.missing_email_address",
@@ -2220,7 +2220,7 @@
   },
   {
     "id": "api.slackimport.slack_import.log",
-    "translation": "Mattermost Slack 导入日志 \r\n"
+    "translation": "BC Chat Slack 导入日志 \r\n"
   },
   {
     "id": "api.slackimport.slack_import.note1",
@@ -2572,7 +2572,7 @@
   },
   {
     "id": "api.templates.invite_body.extra_info",
-    "translation": "Mattermost允许您通过电脑、电话分享消息和文件，即时查找和归档. 当你加入 <strong>{{.TeamDisplayName}}</strong>后, 你可以登录到你的新团队，并在任何时候从网络地址访问这些功能:<br/><br/><a href='{{.TeamURL}}'>{{.TeamURL}}</a>"
+    "translation": "BC Chat允许您通过电脑、电话分享消息和文件，即时查找和归档. 当你加入 <strong>{{.TeamDisplayName}}</strong>后, 你可以登录到你的新团队，并在任何时候从网络地址访问这些功能:<br/><br/><a href='{{.TeamURL}}'>{{.TeamURL}}</a>"
   },
   {
     "id": "api.templates.invite_body.info",
@@ -2672,7 +2672,7 @@
   },
   {
     "id": "api.templates.upgrade_30_body.info",
-    "translation": "<h3 style='font-weight: normal; margin-top: 10px;'>您的多重帐号已更新</h3>您的 Mattermost 伺服器正在升级到版本 3.0，从此您可以在多个团队中使用同一个帐号。<br/><br/>您收到此邮件因为升级过程中发现您的邮箱地址或用户名和另外个帐号重复。<br/><br/>改动如下：<br/><br/>{{if .EmailChanged }}- 在 `/{{.TeamName}}` 团队中重复电子邮件已改为 `{{.Email}}`。你可以使用此新的电子邮件地址和密码登入。<br/><br/>{{end}}{{if .UsernameChanged }}- 在 `/{{.TeamName}}` 团队中重复用户名已改为 `{{.Username}}` 以避免与其他帐号混淆。<br/><br/>{{end}} 建议操作： <br/><br/>建议您登入重复帐号的团队并将主帐号添加到想继续使用的团队以及频道。<br/><br/>这样您可以用主帐号访问所有频道的历史。您可以继续登入重复帐号来获取私信历史。<br/><br/>更多咨询： <br/><br/>关于更多升级到 Mattermost 3.0 的相关咨询，请参见：<a href='http://www.mattermost.org/upgrading-to-mattermost-3-0/'>http://www.mattermost.org/upgrading-to-mattermost-3-0/</a><br/><br/>"
+    "translation": "<h3 style='font-weight: normal; margin-top: 10px;'>您的多重帐号已更新</h3>您的 BC Chat 伺服器正在升级到版本 3.0，从此您可以在多个团队中使用同一个帐号。<br/><br/>您收到此邮件因为升级过程中发现您的邮箱地址或用户名和另外个帐号重复。<br/><br/>改动如下：<br/><br/>{{if .EmailChanged }}- 在 `/{{.TeamName}}` 团队中重复电子邮件已改为 `{{.Email}}`。你可以使用此新的电子邮件地址和密码登入。<br/><br/>{{end}}{{if .UsernameChanged }}- 在 `/{{.TeamName}}` 团队中重复用户名已改为 `{{.Username}}` 以避免与其他帐号混淆。<br/><br/>{{end}} 建议操作： <br/><br/>建议您登入重复帐号的团队并将主帐号添加到想继续使用的团队以及频道。<br/><br/>这样您可以用主帐号访问所有频道的历史。您可以继续登入重复帐号来获取私信历史。<br/><br/>更多咨询： <br/><br/>关于更多升级到 BC Chat 3.0 的相关咨询，请参见：<a href='http://www.mattermost.org/upgrading-to-mattermost-3-0/'>http://www.mattermost.org/upgrading-to-mattermost-3-0/</a><br/><br/>"
   },
   {
     "id": "api.templates.upgrade_30_subject.info",
@@ -2736,7 +2736,7 @@
   },
   {
     "id": "api.templates.welcome_body.info3",
-    "translation": "Mattermost 允许您通过PC或手机分享信息和文件，即时搜索和归档。"
+    "translation": "BC Chat 允许您通过PC或手机分享信息和文件，即时搜索和归档。"
   },
   {
     "id": "api.templates.welcome_body.title",
@@ -4292,7 +4292,7 @@
   },
   {
     "id": "ent.ldap.do_login.user_filtered.app_error",
-    "translation": "您的 AD/LDAP 账号没有使用此 Mattermost 服务器的权限。请向您的系统管理员询问确认 AD/LDAP 用户过滤器。"
+    "translation": "您的 AD/LDAP 账号没有使用此 BC Chat 服务器的权限。请向您的系统管理员询问确认 AD/LDAP 用户过滤器。"
   },
   {
     "id": "ent.ldap.do_login.user_not_registered.app_error",
@@ -4300,7 +4300,7 @@
   },
   {
     "id": "ent.ldap.mattermost_user_update",
-    "translation": "Mattermost 用户已被 AD/LDAP 服务器更新。"
+    "translation": "BC Chat 用户已被 AD/LDAP 服务器更新。"
   },
   {
     "id": "ent.ldap.sync.index_job_failed.error",
@@ -4388,7 +4388,7 @@
   },
   {
     "id": "ent.migration.migratetosaml.username_already_used_by_other_user",
-    "translation": "用户名已被其他 Mattermost 用户使用。"
+    "translation": "用户名已被其他 BC Chat 用户使用。"
   },
   {
     "id": "ent.saml.attribute.app_error",
@@ -5860,7 +5860,7 @@
   },
   {
     "id": "store.sql.schema_version.critical",
-    "translation": "数据结构版本 %v 不再支持。此 Mattermost 服务器支持自动从结构版本 %v 升级到 %v。版本降级不支持。请手动升级升级到最新版本 %v 再继续"
+    "translation": "数据结构版本 %v 不再支持。此 BC Chat 服务器支持自动从结构版本 %v 升级到 %v。版本降级不支持。请手动升级升级到最新版本 %v 再继续"
   },
   {
     "id": "store.sql.short_ciphertext",
@@ -7240,7 +7240,7 @@
   },
   {
     "id": "utils.config.add_client_locale.app_error",
-    "translation": "无法加载 mattermost 配置文件：添加 DefaultClientLocale 至 AvailableLocales。"
+    "translation": "无法加载 BC Chat 配置文件：添加 DefaultClientLocale 至 AvailableLocales。"
   },
   {
     "id": "utils.config.load_config.decoding.panic",
@@ -7264,19 +7264,19 @@
   },
   {
     "id": "utils.config.supported_available_locales.app_error",
-    "translation": "无法加载 mattermost 配置文件：AvailableLocales 必须包含 DefaultClientLocale。设置 AvailableLocales 为所有预先做为默认值。"
+    "translation": "无法加载 BC Chat 配置文件：AvailableLocales 必须包含 DefaultClientLocale。设置 AvailableLocales 为所有预先做为默认值。"
   },
   {
     "id": "utils.config.supported_client_locale.app_error",
-    "translation": "无法加载 mattermost 配置文件：DefaultClientLocale 必须为支持的语系。设置 DefaultClientLocale 为 en 做为默认值。"
+    "translation": "无法加载 BC Chat 配置文件：DefaultClientLocale 必须为支持的语系。设置 DefaultClientLocale 为 en 做为默认值。"
   },
   {
     "id": "utils.config.supported_server_locale.app_error",
-    "translation": "无法加载 mattermost 配置文件：DefaultClientLocale 必须为支持的语系。设置 DefaultClientLocale 为 en 做为默认值。"
+    "translation": "无法加载 BC Chat 配置文件：DefaultClientLocale 必须为支持的语系。设置 DefaultClientLocale 为 en 做为默认值。"
   },
   {
     "id": "utils.config.validate_locale.app_error",
-    "translation": "无法加载 Mattermost 配置文件：AvailableLocales 必须包含 DefaultClientLocale"
+    "translation": "无法加载 BC Chat 配置文件：AvailableLocales 必须包含 DefaultClientLocale"
   },
   {
     "id": "utils.diagnostic.analytics_not_found.app_error",
