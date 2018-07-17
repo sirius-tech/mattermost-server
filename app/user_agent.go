@@ -22,6 +22,14 @@ var platformNames = map[uasurfer.Platform]string{
 	uasurfer.PlatformWindowsPhone: "Windows Phone",
 }
 
+func GetPlatformName(platform uasurfer.Platform) string {
+	if name, ok := platformNames[platform]; !ok {
+		return platformNames[uasurfer.PlatformUnknown]
+	} else {
+		return name
+	}
+}
+
 func getPlatformName(ua *uasurfer.UserAgent) string {
 	platform := ua.OS.Platform
 

@@ -240,6 +240,7 @@ type ServiceSettings struct {
 	EnableEmailInvitations                            *bool
 	// Settings for BC Chat
 	LimitNonAdminLoginToMobile                        *bool
+	MobileSingleSignOn                                *bool
 }
 
 func (s *ServiceSettings) SetDefaults() {
@@ -506,6 +507,9 @@ func (s *ServiceSettings) SetDefaults() {
 	if s.LimitNonAdminLoginToMobile == nil {
 		s.LimitNonAdminLoginToMobile = NewBool(true)
 	}
+
+	if s.MobileSingleSignOn == nil {
+		s.MobileSingleSignOn = NewBool(true)
 	}
 }
 

@@ -102,7 +102,19 @@ func (a *App) GetUserForLogin(id, loginId string) (*model.User, *model.AppError)
 	return nil, model.NewAppError("GetUserForLogin", "store.sql_user.get_for_login.app_error", nil, "", http.StatusBadRequest)
 }
 
-func IsPlatformAllowedForUser(user *model.User, platform uasurfer.Platform) bool {
+func isMobilePlatform(platformName string) bool {
+	platforms := []uasurfer.Platform{uasurfer.PlatformiPhone, uasurfer.PlatformiPad, uasurfer.PlatformiPod}
+	for _, p := range platforms {
+		if platformName == GetPlatformName(p) {
+			return true
+		}
+	}
+
+	return false
+}
+
+// for BC Chat
+func isPlatformAllowedForUser(user *model.User, platform uasurfer.Platform) bool {
 	platformsAllowedForAllUser := []uasurfer.Platform{uasurfer.PlatformiPhone, uasurfer.PlatformiPad, uasurfer.PlatformiPod}
 	for _, p := range platformsAllowedForAllUser {
 		if platform == p {
@@ -115,6 +127,22 @@ func IsPlatformAllowedForUser(user *model.User, platform uasurfer.Platform) bool
 	}
 
 	return false
+}
+
+// for BC Chat
+func (a *App) userHasMobileLogined(userId string) (bool, *model.AppError) {
+	if sessions, err := a.GetSessions(userId); err != nil {
+		return false, err
+	} else {
+		for _, session := range sessions {
+			fmt.Println(session.Props[model.SESSION_PROP_PLATFORM], session)
+			if isMobilePlatform(session.Props[model.SESSION_PROP_PLATFORM]) {
+				return true, nil
+			}
+		}
+	}
+
+	return false, nil
 }
 
 func (a *App) DoLogin(w http.ResponseWriter, r *http.Request, user *model.User, deviceId string) (*model.Session, *model.AppError) {
@@ -147,6 +175,16 @@ func (a *App) DoLogin(w http.ResponseWriter, r *http.Request, user *model.User, 
 			return nil, model.NewAppError("login", "api.user.login.please_login_on_mobile_app", nil, "", http.StatusUnauthorized)
 		}
 	}
+
+	if *a.Config().ServiceSettings.MobileSingleSignOn {
+		if isMobilePlatform(plat) {
+			if b, err := a.userHasMobileLogined(user.Id); err != nil {
+				err.StatusCode = http.StatusInternalServerError
+				return nil, err
+			} else if b {
+				err := model.NewAppError("login", "api.user.login.you_have_logined_on_other_device_already", nil, "", http.StatusForbidden)
+				return nil, err
+			}
 		}
 	}
 
