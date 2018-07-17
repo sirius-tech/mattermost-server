@@ -142,9 +142,11 @@ func (a *App) DoLogin(w http.ResponseWriter, r *http.Request, user *model.User, 
 	bversion := getBrowserVersion(ua, r.UserAgent())
 
 	// Restrict users to login using iOS, except for system_admin
-	if !IsPlatformAllowedForUser(user, ua.OS.Platform) {
-		err := model.NewAppError("login", "api.user.login.invalid_login_credentials", nil, "", http.StatusUnauthorized)
-		return nil, err
+	if *a.Config().ServiceSettings.RestrictNonAdminLoginToMobile {
+		if !IsPlatformAllowedForUser(user, ua.OS.Platform) {
+			err := model.NewAppError("login", "api.user.login.please_login_on_mobile_app", nil, "", http.StatusUnauthorized)
+			return nil, err
+		}
 	}
 
 	session.AddProp(model.SESSION_PROP_PLATFORM, plat)
